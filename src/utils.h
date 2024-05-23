@@ -5,4 +5,9 @@
 
 // If parameter is not true, test fails
 // This check function would be provided by the test framework
-#define IS_TRUE(x) { if (!(x)) LOG("ERROR", "failed on line %i", __LINE__); }
+#define IS_TRUE(x) { \
+  if (!(x)) { \
+    LOG("ERROR", "failed on line %i", __LINE__); \
+    exit(1); \
+  } \
+}
